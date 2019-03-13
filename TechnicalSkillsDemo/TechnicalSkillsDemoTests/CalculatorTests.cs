@@ -24,7 +24,11 @@ namespace TechnicalSkillsDemoTests
         public void NumbersSummedInBasicCalculatorCorrectly(int expectedResult, params int[] testNumbers)
         {
             var basicCalculator = new BasicCalculator();
-            Assert.DoesNotThrow(() => Assert.AreEqual(expectedResult, basicCalculator.Sum(testNumbers)));
+
+            var sum = int.MinValue;
+            Assert.DoesNotThrow(() => sum = basicCalculator.Sum(testNumbers));
+
+            Assert.AreEqual(expectedResult, sum);
         }
     }
 }
