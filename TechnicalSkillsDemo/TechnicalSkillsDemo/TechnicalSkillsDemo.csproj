@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculators\BasicCalculator.cs" />
     <Compile Include="Interfaces\ICalculator.cs" />
     <Compile Include="Interfaces\IStringCounter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
