@@ -6,6 +6,7 @@
 namespace TechnicalSkillsDemoTests
 {
     using NUnit.Framework;
+    using TechnicalSkillsDemo;
 
     public class CalculatorTests
     {
@@ -14,10 +15,11 @@ namespace TechnicalSkillsDemoTests
         {
         }
 
-        [Test]
-        public void Test1()
+        [TestCase(12, 7, 5, TestName ="Requirement: Result of 7 + 5")]
+        public void NumbersSummedInBasicCalculatorCorrectly(int expectedResult, params int[] testNumbers)
         {
-            Assert.Pass();
+            var basicCalculator = new BasicCalculator();
+            Assert.DoesNotThrow(() => Assert.AreEqual(expectedResult, basicCalculator.Sum(testNumbers)));
         }
     }
 }
