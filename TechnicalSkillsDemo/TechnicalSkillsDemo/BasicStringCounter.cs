@@ -20,7 +20,25 @@ namespace TechnicalSkillsDemo
         /// <inheritdoc/>
         public int FindPatternCount(string pattern, params string[] subjects)
         {
-            throw new NotImplementedException();
+            var count = 0;
+            foreach (var subject in subjects)
+            {
+                for (var index = 0; index < subject.Length; ++index)
+                {
+                    var offset = subject.IndexOf(pattern, index);
+                    if (offset != -1)
+                    {
+                        ++count;
+                        index += offset - index;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+
+            return count;
         }
     }
 }
