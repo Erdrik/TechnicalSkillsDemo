@@ -16,7 +16,13 @@ namespace TechnicalSkillsDemo
         /// <inheritdoc/>
         public int Sum(params int[] numbers)
         {
-            throw new NotImplementedException();
+            var result = 0;
+            foreach (var number in numbers)
+            {
+                result += number;
+            }
+
+            return result;
         }
     }
 }
