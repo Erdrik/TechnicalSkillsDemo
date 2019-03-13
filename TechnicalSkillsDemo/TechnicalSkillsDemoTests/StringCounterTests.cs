@@ -18,12 +18,12 @@ namespace TechnicalSkillsDemoTests
         {
         }
 
-        [TestCase(12, textTest, TestName = "Requirement: Lorem ipsum has 12 \"e\"s.")]
-        [TestCase(8, textTest, TestName = "Requirement: 17272838119191929838299111 has 8 \"1\"s.")]
-        public void PatternsWillBeCounted(int expectedCount, params string[] text)
+        [TestCase(12, "e", textTest, TestName = "Requirement: Lorem ipsum has 12 \"e\"s.")]
+        [TestCase(8, "1", numberTest, TestName = "Requirement: 17272838119191929838299111 has 8 \"1\"s.")]
+        public void PatternsWillBeCounted(int expectedCount, string pattern, params string[] texts)
         {
             var stringCounter = new BasicStringCounter();
-            Assert.DoesNotThrow(() => Assert.AreEqual(expectedCount, text));
+            Assert.DoesNotThrow(() => Assert.AreEqual(expectedCount, stringCounter.FindPatternCount(pattern, texts)));
         }
     }
 }
