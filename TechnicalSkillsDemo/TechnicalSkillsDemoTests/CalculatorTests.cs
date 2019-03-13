@@ -16,6 +16,11 @@ namespace TechnicalSkillsDemoTests
         }
 
         [TestCase(12, 7, 5, TestName ="Requirement: Result of 7 + 5")]
+        [TestCase(100, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, TestName = "10 10s")]
+        [TestCase(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, TestName = "Adding multiple 0s is still 0.")]
+        [TestCase(-1, -1, TestName = "-1")]
+        [TestCase(-2, -1, -1, TestName = "-1 and -1 makes -2")]
+        [TestCase(0, 1, -1, TestName = "1 and -1 cancels out")]
         public void NumbersSummedInBasicCalculatorCorrectly(int expectedResult, params int[] testNumbers)
         {
             var basicCalculator = new BasicCalculator();
